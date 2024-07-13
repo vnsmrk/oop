@@ -19,7 +19,7 @@ require_once 'php/init.php';
 
     <div class="container mt-5">
     <?php taskCrud();?>
-    <form action="" method="GET">
+    <form action="" method="POST">
         <div class="row">
             <div class="col-md-9 form-group">
                 <input class="form-control" type="text" name="items" placeholder="Input"></input>

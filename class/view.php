@@ -20,19 +20,21 @@ class view extends config{
              </thead><tbody>";
 
              foreach ($result as $data){
-                 echo "<tr>";
-                    echo "<td> $data[item]</td>";
-                    echo "<td> 
-                        <a class='btn btn-info' href='index.php?edit=$data[id]'> Mark as Completed</a>
-                        <a class='btn btn-danger' href='index.php?delete=$data[id]'>Deleted</a>
-
-                    
-                        </td>";
-
-                    
-                 echo "</tr>";
-
-             }
+                echo "<tr>";
+                echo "<td> $data[item]</td>";
+                echo "<td>
+                        <form method='POST' style='display:inline;'>
+                            <input type='hidden' name='edit' value='$data[id]'>
+                            <button type='submit' class='btn btn-info'>Mark as Completed</button>
+                        </form>
+                        <form method='POST' style='display:inline;'>
+                            <input type='hidden' name='delete' value='$data[id]'>
+                            <button type='submit' class='btn btn-danger'>Delete</button>
+                        </form>
+                      </td>";
+                echo "</tr>";
+            }
+            
         echo "</tbody></table>";
 
     }
