@@ -54,6 +54,8 @@ class view extends config{
                 <tr>
                 <th>Task Item</th>
                 <th>Date Completed</th>
+                <th>Action</th>
+
 
                 </tr>
         
@@ -63,6 +65,12 @@ class view extends config{
                  echo "<tr>";
                     echo "<td> $data[item]</td>";
                     echo "<td>$data[date_completed]</td>";
+                    echo "<td>
+                        <form method='POST' style='display:inline;'>
+                            <input type='hidden' name='delete' value='$data[id]'>
+                            <button type='submit' class='btn btn-danger'>Delete</button>
+                        </form>
+                      </td>";
 
                     
                  echo "</tr>";
