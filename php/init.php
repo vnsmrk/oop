@@ -1,5 +1,7 @@
 <?php
 require_once 'functions.php';
+require_once './includes/header.php';
+
 spl_autoload_register(function($class){
     require_once $_SERVER['DOCUMENT_ROOT'].'/oop/class/'.$class.'.php';
 });
