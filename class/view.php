@@ -14,9 +14,7 @@ class view extends config{
                 <tr>
                 <th>Task Item</th>
                 <th>Action</th>
-
-                </tr>
-        
+                </tr>       
              </thead><tbody>";
 
              foreach ($result as $data){
@@ -33,8 +31,7 @@ class view extends config{
                         </form>
                       </td>";
                 echo "</tr>";
-            }
-            
+            }           
         echo "</tbody></table>";
 
     }
@@ -55,10 +52,7 @@ class view extends config{
                 <th>Task Item</th>
                 <th>Date Completed</th>
                 <th>Action</th>
-
-
-                </tr>
-        
+                </tr>      
              </thead><tbody>";
 
              foreach ($result as $data){
@@ -70,11 +64,8 @@ class view extends config{
                             <input type='hidden' name='delete' value='$data[id]'>
                             <button type='submit' class='btn btn-danger'>Delete</button>
                         </form>
-                      </td>";
-
-                    
+                      </td>";                  
                  echo "</tr>";
-
              }
         echo "</tbody></table>";
 

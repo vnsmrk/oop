@@ -7,13 +7,15 @@ require_once 'php/init.php';
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <title>Hello, world!</title>
 </head>
 <body>
   <nav class="navbar navbar-dark bg-dark shadow">
   <div class="container-fluid">
     <span class="navbar-brand mb-2 h1">Todo List</span>
-    <a class="navbar-brand" href="pages/completed.php">Link Text</a>
+    <a class="navbar-brand" href="father_info.php">Link Text</a>
+    <a class="navbar-brand" href="mother_info.php">Link Text</a>
     </div>
   </nav>
 

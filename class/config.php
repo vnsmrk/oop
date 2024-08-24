@@ -8,7 +8,7 @@ class config{
 
     public function con(){
         try{
-            $this->pdo = new PDO('mysql:host=localhost;dbname=tbl',$this->user, $this->password);
+            $this->pdo = new PDO('mysql:host=localhost;dbname=tbl_todolist',$this->user, $this->password);
         }catch(PDOException $e){
             die($e->getMessage());
         }
