@@ -60,88 +60,93 @@
         }
     }
     
-    function mother() {
+    function mother(){
         require_once './class/Mother_info.php';
-        $mother = new Mother_info();
-        $message = '';
-    
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            if (isset($_POST['insert'])) {
-                $data = [
-                    'name' => $_POST['name'] ?? null,
-                    'age' => $_POST['age'] ?? null,
-                    'occupation' => $_POST['occupation'] ?? null
-                ];
-                if ($mother->insert($data)) {
-                    $message = '<script>
-                                Swal.fire({
-                                    title: "Success!",
-                                    text: "Data Inserted Successfully.",
-                                    icon: "success",
-                                    confirmButtonText: "OK"
-                                });
-                              </script>';
-                } else {
-                    $message = '<script>
-                                Swal.fire({
-                                    title: "Error!",
-                                    text: "Data not Inserted.",
-                                    icon: "error",
-                                    confirmButtonText: "OK"
-                                });
-                              </script>';
-                }
-            } elseif (isset($_POST['update'])) {
-                $id = $_POST['id'];
-                $data = [
-                    'name' => $_POST['name'] ?? null,
-                    'age' => $_POST['age'] ?? null,
-                    'occupation' => $_POST['occupation'] ?? null
-                ];
-                if ($mother->update($id, $data)) {
-                    $message = '<script>
-                                Swal.fire({
-                                    title: "Success!",
-                                    text: "Data Updated Successfully.",
-                                    icon: "success",
-                                    confirmButtonText: "OK"
-                                });
-                              </script>';
-                } else {
-                    $message = '<script>
-                                Swal.fire({
-                                    title: "Error!",
-                                    text: "Data Update Failed.",
-                                    icon: "error",
-                                    confirmButtonText: "OK"
-                                });
-                              </script>';
-                }
-            } elseif (isset($_POST['delete'])) {
-                $id = $_POST['id'];
-                if ($mother->delete($id)) {
-                    $message = '<script>
-                                Swal.fire({
-                                    title: "Success!",
-                                    text: "Data Deleted Successfully.",
-                                    icon: "success",
-                                    confirmButtonText: "OK"
-                                });
-                              </script>';
-                } else {
-                    $message = '<script>
-                                Swal.fire({
-                                    title: "Error!",
-                                    text: "Data Not Deleted.",
-                                    icon: "error",
-                                    confirmButtonText: "OK"
-                                });
-                              </script>';
-                }
-            }
+$mother = new Mother_info();
+
+$message = '';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST['insert'])) {
+        $data = [
+            'name' => $_POST['name'] ?? null,
+            'age' => $_POST['age'] ?? null,
+            'occupation' => $_POST['occupation'] ?? null
+        ];
+        if ($mother->insert($data)) {
+            $message = '<script>
+                        Swal.fire({
+                            title: "Success!",
+                            text: "Data Inserted Successfully.",
+                            icon: "success",
+                            confirmButtonText: "OK"
+                        }).then(() => {
+                            smoothReload();
+                        });
+                      </script>';
+        } else {
+            $message = '<script>
+                        Swal.fire({
+                            title: "Error!",
+                            text: "Data not Inserted.",
+                            icon: "error",
+                            confirmButtonText: "OK"
+                        });
+                      </script>';
         }
-    
-        return $message;
+    } elseif (isset($_POST['update'])) {
+        $id = $_POST['id'];
+        $data = [
+            'name' => $_POST['name'] ?? null,
+            'age' => $_POST['age'] ?? null,
+            'occupation' => $_POST['occupation'] ?? null
+        ];
+        if ($mother->update($id, $data)) {
+            $message = '<script>
+                        Swal.fire({
+                            title: "Success!",
+                            text: "Data Updated Successfully.",
+                            icon: "success",
+                            confirmButtonText: "OK"
+                        }).then(() => {
+                            smoothReload();
+                        });
+                      </script>';
+        } else {
+            $message = '<script>
+                        Swal.fire({
+                            title: "Error!",
+                            text: "Data Update Failed.",
+                            icon: "error",
+                            confirmButtonText: "OK"
+                        });
+                      </script>';
+        }
+    } elseif (isset($_POST['delete'])) {
+        $id = $_POST['id'];
+        if ($mother->delete($id)) {
+            $message = '<script>
+                        Swal.fire({
+                            title: "Success!",
+                            text: "Data Deleted Successfully.",
+                            icon: "success",
+                            confirmButtonText: "OK"
+                        }).then(() => {
+                            smoothReload();
+                        });
+                      </script>';
+        } else {
+            $message = '<script>
+                        Swal.fire({
+                            title: "Error!",
+                            text: "Data Not Deleted.",
+                            icon: "error",
+                            confirmButtonText: "OK"
+                        });
+                      </script>';
+        }
+    }
+}return $message;
     }
     
     function viewTable(){

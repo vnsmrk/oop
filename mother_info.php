@@ -1,10 +1,6 @@
 <?php
 require_once 'php/functions.php';
-
-// Call the mother() function to handle the CRUD operations and get the message
 $message = mother();
-
-// Retrieve the mother data for display
 $mother = new Mother_info();
 $motherData = $mother->view();
 ?>
@@ -32,7 +28,6 @@ $motherData = $mother->view();
 
     <!-- Display the alert message -->
     <?php if ($message) echo $message; ?>
-    <?php mother(); ?>
     
     <form method="POST" action="">
         <input type="hidden" name="id">
