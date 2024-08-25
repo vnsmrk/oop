@@ -1,0 +1,181 @@
+:root {
+    --bs-success-rgb: 71, 222, 152 !important;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    font-family: Tahoma;
+    overflow-x: hidden;
+}
+
+.btn-info.text-light:hover, .btn-info.text-light:focus {
+    background: #000;
+}
+
+table, tbody, td, tfoot, th, thead, tr {
+    border-color: #ededed !important;
+    border-style: solid;
+    border-width: 1px !important;
+}
+
+.calendar-container {
+    padding: 30px; 
+    background-color: #fff; 
+    border-radius: 15px; /* Rounds the corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a drop shadow */
+    margin: 0 auto; /* Center the container horizontally */
+    overflow-x: auto;
+}
+
+.calendar-container:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.fc-prev-button, .fc-next-button {
+    background: none;
+    border: none;
+    color: green;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 1em;
+    margin: auto;
+}
+
+.fc, .fc .fc-daygrid-day, .fc .fc-daygrid-day-top, .fc .fc-daygrid-day-number {
+    color: black;
+}
+
+.fc-event, .fc-event-dot, .fc-daygrid-event, .fc-event-title, .fc-timegrid-event {
+    color: green;
+}
+
+.fc .fc-col-header-cell {
+    text-align: left;
+    color: black;
+}
+
+.fc-daygrid .fc-col-header-cell-cushion {
+    text-align: left;
+    color: black;
+}
+
+.fc-daygrid-day-number {
+    float: left; 
+    margin-left: 5px;
+    color: black;
+}
+
+.fc-daygrid-day-frame {
+    text-align: left;
+    vertical-align: top;
+    padding: 5px;
+}
+
+.fc-daygrid-day {
+    padding: 10px;
+}
+
+.fc-prev-button, .fc-next-button {
+    color: green !important;
+}
+
+.modal-content {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.modal-header {
+    background-color: #53825c; 
+    color: white;
+    border-bottom: 1px solid #28a745;
+}
+
+.modal-title {
+    color: white;
+}
+
+.btn-close {
+    filter: brightness(0) invert(1);
+}
+
+.modal-footer .btn-primary {
+    background-color: #53825c;
+    border-color: #28a745;
+}
+
+.modal-footer .btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.modal-footer .btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.modal-content {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.form-control:focus {
+    border-color: #28a745;
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+}
+
+#new-event {
+    border-radius: 8px;
+}
+
+.event-container {
+    max-height: 200px;
+    overflow-y: auto;
+    position: relative;
+    padding-right: 15px;
+}
+
+.event-container::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    
+    
+}
+
+.event-container .event:not(:first-child) {
+    display: none;
+}
+
+.event-container.show-more .event {
+    display: block;
+}
+
+.show-more-btn {
+    cursor: pointer;
+    color: green;
+    text-decoration: underline;
+}
+
+.event {
+    margin-bottom: 1rem;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    word-wrap: break-word;
+    overflow: hidden;
+}
+
+.event h5 {
+    color: green;
+    font-weight: bold;
+}
+
+.event .date {
+    font-weight: bold;
+    color: black;
+}
+
+.event p {
+    margin: 0;
+}

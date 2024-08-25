@@ -237,6 +237,108 @@
             }
         }return $message;
     }
+
+    function cases(){
+        require_once './class/Cases_info.php';
+        $father = new Cases_info();
+
+        $message = '';
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            if (isset($_POST['insert'])) {
+                $data = [
+                    'itemnumber' => $_POST['itemnumber'] ?? null,
+                    'controlnumber' => $_POST['controlnumber'] ?? null,
+                    'partyrepresented' => $_POST['partyrepresented'] ?? null,
+                    'gender' => $_POST['gender'] ?? null,
+                    'casetitle' => $_POST['casetitle'] ?? null,
+                    'court' => $_POST['court'] ?? null,
+                    'casenumber' => $_POST['casenumber'] ?? null,
+                    'causeofaction' => $_POST['causeofaction'] ?? null,
+                    'causeofaction' => $_POST['causeofaction'] ?? null,
+                    'casestatus' => $_POST['casestatus'] ?? null,
+                    'lastactiontaken' => $_POST['lastactiontaken'] ?? null,
+                    'causeoftermination' => $_POST['causeoftermination'] ?? null,
+                    'casedate' => $_POST['casedate'] ?? null,
+                    'casetype' => $_POST['casetype'] ?? null,
+                    'startdate' => $_POST['startdate'] ?? null
+
+                ];
+                if ($father->insert($data)) {
+                    $message = '<script>
+                                Swal.fire({
+                                    title: "Success!",
+                                    text: "Data Inserted Successfully.",
+                                    icon: "success",
+                                    confirmButtonText: "OK"
+                                }).then(() => {
+                                    smoothReload();
+                                });
+                            </script>';
+                } else {
+                    $message = '<script>
+                                Swal.fire({
+                                    title: "Error!",
+                                    text: "Data not Inserted.",
+                                    icon: "error",
+                                    confirmButtonText: "OK"
+                                });
+                            </script>';
+                }
+            } elseif (isset($_POST['update'])) {
+                $id = $_POST['id'];
+                $data = [
+                    'name' => $_POST['name'] ?? null,
+                    'age' => $_POST['age'] ?? null,
+                    'occupation' => $_POST['occupation'] ?? null
+                ];
+                if ($father->update($id, $data)) {
+                    $message = '<script>
+                                Swal.fire({
+                                    title: "Success!",
+                                    text: "Data Updated Successfully.",
+                                    icon: "success",
+                                    confirmButtonText: "OK"
+                                }).then(() => {
+                                    smoothReload();
+                                });
+                            </script>';
+                } else {
+                    $message = '<script>
+                                Swal.fire({
+                                    title: "Error!",
+                                    text: "Data Update Failed.",
+                                    icon: "error",
+                                    confirmButtonText: "OK"
+                                });
+                            </script>';
+                }
+                } elseif (isset($_POST['delete'])) {
+                    $id = $_POST['delete_id'];
+                    if ($father->delete($id)) {
+                        $message = '<script>
+                                    Swal.fire({
+                                        title: "Success!",
+                                        text: "Data Deleted Successfully.",
+                                        icon: "success",
+                                        confirmButtonText: "OK"
+                                    }).then(() => {
+                                        smoothReload();
+                                    });
+                                </script>';
+                    } else {
+                        $message = '<script>
+                                    Swal.fire({
+                                        title: "Error!",
+                                        text: "Data Not Deleted.",
+                                        icon: "error",
+                                        confirmButtonText: "OK"
+                                    });
+                                </script>';
+                    }
+                }
+        }return $message;
+    }
     function viewTable(){
         $view = new view();
         $view->viewData();

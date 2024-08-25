@@ -1,5 +1,6 @@
 <?php
 require_once 'php/init.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -7,6 +8,9 @@ require_once 'php/init.php';
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Hello, world!</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
   <nav class="navbar navbar-dark bg-dark shadow">

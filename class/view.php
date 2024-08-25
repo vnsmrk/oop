@@ -70,6 +70,10 @@ class view extends config{
         echo "</tbody></table>";
 
     }
+
+
+
+    
 }
 
 ?>

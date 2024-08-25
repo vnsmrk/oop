@@ -4,7 +4,6 @@ $message = father();
 $father = new father_info();
 $fatherData = $father->view();
 ?>
-?>
 
 <!DOCTYPE html>
 <html lang="en">
