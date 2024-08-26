@@ -290,7 +290,18 @@
                 $data = [
                     'itemnumber' => $_POST['itemnumber'] ?? null,
                     'controlnumber' => $_POST['controlnumber'] ?? null,
-                    'partyrepresented' => $_POST['partyrepresented'] ?? null
+                    'partyrepresented' => $_POST['partyrepresented'] ?? null,
+                    'gender' => $_POST['gender'] ?? null,
+                    'casetitle' => $_POST['casetitle'] ?? null,
+                    'court' => $_POST['court'] ?? null,
+                    'casenumber' => $_POST['casenumber'] ?? null,
+                    'causeofaction' => $_POST['causeofaction'] ?? null,
+                    'casestatus' => $_POST['casestatus'] ?? null,
+                    'lastactiontaken' => $_POST['lastactiontaken'] ?? null,
+                    'causeoftermination' => $_POST['causeoftermination'] ?? null,
+                    'casedate' => $_POST['casedate'] ?? null,
+                    'casetype' => $_POST['casetype'] ?? null,
+                    'startdate' => $_POST['startdate'] ?? null
                 ];
                 if ($father->update($id, $data)) {
                     $message = '<script>
