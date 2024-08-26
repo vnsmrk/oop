@@ -288,9 +288,9 @@
             } elseif (isset($_POST['update'])) {
                 $id = $_POST['id'];
                 $data = [
-                    'name' => $_POST['name'] ?? null,
-                    'age' => $_POST['age'] ?? null,
-                    'occupation' => $_POST['occupation'] ?? null
+                    'itemnumber' => $_POST['itemnumber'] ?? null,
+                    'controlnumber' => $_POST['controlnumber'] ?? null,
+                    'partyrepresented' => $_POST['partyrepresented'] ?? null
                 ];
                 if ($father->update($id, $data)) {
                     $message = '<script>
@@ -314,7 +314,7 @@
                             </script>';
                 }
                 } elseif (isset($_POST['delete'])) {
-                    $id = $_POST['delete_id'];
+                    $id = $_POST['id'];
                     if ($father->delete($id)) {
                         $message = '<script>
                                     Swal.fire({
